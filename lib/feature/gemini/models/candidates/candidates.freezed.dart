@@ -24,8 +24,12 @@ mixin _$Candidates {
   String? get finishReason => throw _privateConstructorUsedError;
   int? get index => throw _privateConstructorUsedError;
 
+  /// Serializes this Candidates to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Candidates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CandidatesCopyWith<Candidates> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$CandidatesCopyWithImpl<$Res, $Val extends Candidates>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Candidates
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,6 +80,8 @@ class _$CandidatesCopyWithImpl<$Res, $Val extends Candidates>
     ) as $Val);
   }
 
+  /// Create a copy of Candidates
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ContentCopyWith<$Res>? get content {
@@ -109,6 +117,8 @@ class __$$CandidatesImplCopyWithImpl<$Res>
       _$CandidatesImpl _value, $Res Function(_$CandidatesImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Candidates
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -174,11 +184,13 @@ class _$CandidatesImpl with DiagnosticableTreeMixin implements _Candidates {
             (identical(other.index, index) || other.index == index));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, content, finishReason, index);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Candidates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CandidatesImplCopyWith<_$CandidatesImpl> get copyWith =>
@@ -207,8 +219,11 @@ abstract class _Candidates implements Candidates {
   String? get finishReason;
   @override
   int? get index;
+
+  /// Create a copy of Candidates
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CandidatesImplCopyWith<_$CandidatesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

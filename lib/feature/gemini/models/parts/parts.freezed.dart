@@ -22,8 +22,12 @@ Parts _$PartsFromJson(Map<String, dynamic> json) {
 mixin _$Parts {
   String? get text => throw _privateConstructorUsedError;
 
+  /// Serializes this Parts to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Parts
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PartsCopyWith<Parts> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -45,6 +49,8 @@ class _$PartsCopyWithImpl<$Res, $Val extends Parts>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Parts
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -77,6 +83,8 @@ class __$$PartsImplCopyWithImpl<$Res>
       _$PartsImpl _value, $Res Function(_$PartsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Parts
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,11 +131,13 @@ class _$PartsImpl with DiagnosticableTreeMixin implements _Parts {
             (identical(other.text, text) || other.text == text));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, text);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Parts
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PartsImplCopyWith<_$PartsImpl> get copyWith =>
@@ -148,8 +158,11 @@ abstract class _Parts implements Parts {
 
   @override
   String? get text;
+
+  /// Create a copy of Parts
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PartsImplCopyWith<_$PartsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

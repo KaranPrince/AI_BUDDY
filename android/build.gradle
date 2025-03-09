@@ -1,14 +1,20 @@
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.9.20' // Updated Kotlin version
+
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.4.0'  // Ensuring Gradle 8.4
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
+}
+
+plugins {
+    id 'com.android.application' version '8.4.0' apply false
+    id 'dev.flutter.flutter-gradle-plugin' version '1.0.0' apply false
 }
 
 allprojects {
@@ -19,12 +25,12 @@ allprojects {
 }
 
 subprojects {
-    afterEvaluate {project ->
+    afterEvaluate { project ->
         if (project.hasProperty('android')) {
             android {
                 compileOptions {
-                    sourceCompatibility JavaVersion.VERSION_1_8
-                    targetCompatibility JavaVersion.VERSION_1_8
+                    sourceCompatibility JavaVersion.VERSION_17  // Ensuring Java 17
+                    targetCompatibility JavaVersion.VERSION_17
                 }
             }
         }
@@ -34,8 +40,6 @@ subprojects {
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(':app')
 }
 
